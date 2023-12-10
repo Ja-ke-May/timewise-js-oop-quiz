@@ -195,24 +195,27 @@ const endMessage1 = document.getElementById('end-message1');
 let currentQuestionIndex = 0;
 let count = 0;
 
+
 // Load current question and options
 const loadQuestion = () => {
-const currentQuestion = questions[currentQuestionIndex];
+  const currentQuestion = questions[currentQuestionIndex];
 
-// Display question
-questionBox.textContent = currentQuestion.question;
+  // Display question
+  questionBox.textContent = currentQuestion.question;
 
-// Remove existing event listeners on answer buttons
-Array.from(answerButtons).forEach((button) => {
-button.removeEventListener('click', checkAnswer);
-});
+  // Remove existing event listeners on answer buttons
+  Array.from(answerButtons).forEach((button) => {
+      button.removeEventListener('click', checkAnswer);
+  });
 
-// Display answer options
-Array.from(answerButtons).forEach((button, i) => {
-button.textContent = currentQuestion.options[i];
-// Add event listener
-button.addEventListener('click', checkAnswer);
-});
+  // Display answer options
+  Array.from(answerButtons).forEach((button, i) => {
+      const optionText = currentQuestion.options[i];
+      button.innerHTML = optionText; // Use innerHTML to allow line breaks
+
+      // Add event listener
+      button.addEventListener('click', checkAnswer);
+  });
 };
 
 // Check selected answer
