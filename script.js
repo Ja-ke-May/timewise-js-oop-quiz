@@ -117,8 +117,8 @@ const questions = [
   },
   {
     question: "What is the purpose of the 'Object.create()' method in JavaScript?",
-    options: ["To create a new instance of a class", "To clone an object without copying its properties", "To check if an object is empty", "To define a new object literal"],
-    correctAnswer: "To create a new object with the specified prototype object and properties"
+    options: ["To create a new instance of a class", "To clone an object without copying its properties", "Create an object with specified prototype and properties", "To define a new object literal"],
+    correctAnswer: "Create an object with specified prototype and properties"
   },
   {
     question: "How does JavaScript handle method overloading?",
